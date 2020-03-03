@@ -11,11 +11,12 @@ while True:
 
     predictions = ["it is certain", "very doubtful", "concentrate and ask again", "signs point to yes", "don't count on it."]
 
-    user_input = input("Please ask, Will I win the lottery tomorrow? ")
+    user_input = input("Please ask your question ")
 
     print(choice(predictions))
     
     if(input('Would you like to play again (y/n): ').lower() != 'y'):
         print(" Goodbye! ")
         break 
+
 

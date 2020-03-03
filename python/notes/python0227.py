@@ -24,3 +24,26 @@ if j:
     print(j) # qwerty
 if z:
     print(z)
+
+
+# 
+my_flag = True
+while my_flag: #will always run if the conditio is true.
+    print("hey there ")
+    user_input = input("do you want to say hi again?")
+    if user_input == 'n':
+        my_flag = False
+
+
+my_list = [1,2,3,4,5,6]
+
+for item in my list:
+    if item == 4:
+        continue
+    print(item)
+
+x = 7
+y = 34
+z = 9 
+
+print(6 < y < 100)
