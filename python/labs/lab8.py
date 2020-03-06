@@ -17,11 +17,11 @@ print (f" {pen} pennies")
 
 # Version 2 
 
-# user_input = float(input("Enter your dollar amount "))
+user_input = float(input("Enter your dollar amount "))
 
-# pennies = user_input * 100
+pennies = user_input * 100
 
-# print(f"{pennies} pennies")
+print(f"{pennies} pennies")
 
 
 
