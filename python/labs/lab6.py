@@ -3,8 +3,8 @@ Let's generate a password of length n using a while loop and random.choice, this
 
 Hint: random.choice can be used to pick a character out of a string, as well as an element out of a list.
 """
-import random 
-import string 
+# import random 
+# import string 
 
 # pw_length = int(input ("How long would you like your password? "))
 # pw = string.ascii_letters + string.digits + string.punctuation
@@ -18,7 +18,7 @@ import string
 #         break
 # print (i)
 
-# Version 3
+# # Version 3
 
 
 lower = int(input("How many lowercase letters would you like? "))
@@ -66,6 +66,7 @@ while 0 <= char:
     i4 += random.choice(password4)
     if y == char:
         break
+    
 x = i1 + i2 + i3 + i4
 x = list(x)
 random.shuffle(x)
@@ -75,3 +76,6 @@ print("".join(x))
     
 
 
+# my_list = ['a']
+# print (my_list.append('b'))
+# print(my_list)

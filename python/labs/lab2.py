@@ -29,31 +29,31 @@
 
 # # #Version 3 
 
-# antonym = input ("Give me an antonym for data: ")
-# adjective = input ("Tell me an adjective: ")
-# buzzwood = input ("Give me a sciency buzzword: ")
-# animal = input ("A type of animal (plural): ")
-# sciency = input ("some sciency thing: ")
-# sciency2 = input ("another sciency thing: ")
-# sci_adj = input ("sciency adjective: ")
+antonym = input ("Give me an antonym for data: ")
+adjective = input ("Tell me an adjective: ")
+buzzwood = input ("Give me a sciency buzzword: ")
+animal = input ("A type of animal (plural): ")
+sciency = input ("some sciency thing: ")
+sciency2 = input ("another sciency thing: ")
+sci_adj = input ("sciency adjective: ")
 
-# print (f"{antonym} Scientist Job Description: Seeking a {adjective} engineer, able to work on {buzzwood} projects with a team of {animal}. Key responsibilities: Extract patterns from non-material. Optimize {sciency}. Transform {sciency2} into {sci_adj} material.")
+print (f"{antonym} Scientist Job Description: Seeking a {adjective} engineer, able to work on {buzzwood} projects with a team of {animal}. Key responsibilities: Extract patterns from non-material. Optimize {sciency}. Transform {sciency2} into {sci_adj} material.")
 
-# question = input ("Do you want to hear the story again? ")
+question = input ("Do you want to hear the story again? ")
 
 
-# while(question == "yes"):
-#     antonym = input ("Give me an antonym for data: ")
-#     adjective = input ("Tell me an adjective: ")
-#     buzzwood = input ("Give me a sciency buzzword: ")
-#     animal = input ("A type of animal (plural): ")
-#     sciency = input ("some sciency thing: ")
-#     sciency2 = input ("another sciency thing: ")
-#     sci_adj = input ("sciency adjective: ")
-#     print(f"{antonym} Scientist Job Description: Seeking a {adjective} engineer, able to work on {buzzwood} projects with a team of {animal}. Key responsibilities: Extract patterns from non-material. Optimize {sciency}. Transform {sciency2} into {sci_adj} material.")
-#     question = input ("Do you want to hear the story again? ")
-#     if question == "no":
-#         print("Goodbye! ")
+while(question == "yes"):
+    antonym = input ("Give me an antonym for data: ")
+    adjective = input ("Tell me an adjective: ")
+    buzzwood = input ("Give me a sciency buzzword: ")
+    animal = input ("A type of animal (plural): ")
+    sciency = input ("some sciency thing: ")
+    sciency2 = input ("another sciency thing: ")
+    sci_adj = input ("sciency adjective: ")
+    print(f"{antonym} Scientist Job Description: Seeking a {adjective} engineer, able to work on {buzzwood} projects with a team of {animal}. Key responsibilities: Extract patterns from non-material. Optimize {sciency}. Transform {sciency2} into {sci_adj} material.")
+    question = input ("Do you want to hear the story again? ")
+    if question == "no":
+        print("Goodbye! ")
 
 
 # Justin's solution
