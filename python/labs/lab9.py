@@ -1,52 +1,52 @@
-# # Version 1 
+# # # Version 1 
 
-conv = float(input ("Enter your measurement in feet "))
+# conv = float(input ("Enter your measurement in feet "))
 
-meters = 0.3048
+# meters = 0.3048
 
-output = (conv * meters)
+# output = (conv * meters)
 
-two = ("%.2f" % output) # %f treats value as a decimal, .2 two digits 
+# two = ("%.2f" % output) # %f treats value as a decimal, .2 two digits 
 
-print (f"{two} meters! ")
+# print (f"{two} meters! ")
 
-# Version 2/3
+# # Version 2/3
 
-meters 
-feet = 0.3048
-miles = 1609.34 
-meters = 1 
-kilo = 1000
-yard = 0.9144
-inch = 0.0254 
+# meters 
+# feet = 0.3048
+# miles = 1609.34 
+# meters = 1 
+# kilo = 1000
+# yard = 0.9144
+# inch = 0.0254 
 
-units = float(input("Enter your units. "))
-distance = input("Enter your measurement in feet, miles, meters, kilo, yard, or inch. ")
+# units = float(input("Enter your units. "))
+# distance = input("Enter your measurement in feet, miles, meters, kilo, yard, or inch. ")
 
-if distance == "feet":
-    calc = units * feet
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
-elif distance == "miles":
-    calc = units * miles
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
-elif distance == "meters":
-    calc = units * meters
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
-elif distance == "kilo":
-    calc = units * kilo
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
-elif distance == "yard":
-    calc = units * yard
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
-elif distance == "inch":
-    calc = units * inch
-    two = ("%.2f" % calc)
-    print (f"That's {two} meters!")
+# if distance == "feet":
+#     calc = units * feet
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
+# elif distance == "miles":
+#     calc = units * miles
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
+# elif distance == "meters":
+#     calc = units * meters
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
+# elif distance == "kilo":
+#     calc = units * kilo
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
+# elif distance == "yard":
+#     calc = units * yard
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
+# elif distance == "inch":
+#     calc = units * inch
+#     two = ("%.2f" % calc)
+#     print (f"That's {two} meters!")
 
 #Version 4
 
@@ -68,6 +68,9 @@ to_units = meters.get(input("Enter your measurement you would like to convert to
 measure = (distance * from_units) / to_units
 print(measure)
 
+
 # if from_units == 'feet' and to_units == 'miles':
 #     con = (distance * feet)/miles
 #     print (f"That's {con} miles! ")
+
+
