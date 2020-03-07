@@ -69,8 +69,40 @@ measure = (distance * from_units) / to_units
 print(measure)
 
 
-# if from_units == 'feet' and to_units == 'miles':
+# if from_un25 
+    79its == 'feet' and to_units == 'miles':
 #     con = (distance * feet)/miles
 #     print (f"That's {con} miles! ")
 
 
+justin solution
+
+define up top
+define a function that takes in a distance, and a unit and returns the distance converted into the specified unit.
+
+func(dist,unit)
+if unit == m 
+distance * conversaion_factor for m 
+elif unit == filterdistance * conversaion factor for ft
+.
+.
+.
+.
+
+define a function that converts the given distance (specified in meters) into the target units
+
+define another function that standardizes the units using meters, 
+converts specified units to the target units by way of conversion to meters filterdistance
+
+def main()
+    ask for the distance
+    convert the distance to a float
+    loop, while True
+    ask the user for the units to convert fro, 
+    ask the user for the units to convert to
+    convert the distance to meters 
+    use the distance converted to meters to then convert into the target unit
+    then they display
+    ask if user wants to go again
+    if y go again
+    if n break 
