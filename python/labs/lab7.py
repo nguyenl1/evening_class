@@ -45,7 +45,10 @@ import random
 
 def main ():
     valid_moves = ["rock", "paper", "scissors"] # created a list of valid moves (rock, paper, scissors)
-    winning_cases = [tuple()] # create a list of tuples that represent valid winning cases 
+    winning_cases = [
+        ("paper" > "rock"),
+        ("rock" > "scissors"),
+        ("scissors" > "paper")] # create a list of tuples that represent valid winning cases 
 
     while True:
     user = input("rock , paper , or scissors? ")
