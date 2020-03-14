@@ -41,3 +41,26 @@ Pass by reference
 > 1. creates an object to represent the value
 > 2. creates the variable/name if it doesn't exist already
 > 3. links  the variable to the new object
+
+
+
+"""
+slicing
+
+nums = [4, 56, 73, 12, 17, 99, 42, 87]
+
+
+
+print(nums[::]) whole string
+
+print(nums[3::]) starts the count at the 4th element
+
+print(nums[2:6:]) start at position 2 and then end at position before the 6th position
+
+print(nums[2:6:2]) start at 2, end before 6th position and skips by 2
+
+print(nums[::2]) skip by 2
+
+print(nums[-1::]) going backwards
+
+ """

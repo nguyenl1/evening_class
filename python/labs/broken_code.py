@@ -27,6 +27,4 @@ def main():
     else:
         print('no temp entered')
   
-        
-
 main() 

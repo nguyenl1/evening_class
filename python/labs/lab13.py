@@ -55,88 +55,30 @@ print("".join(y))
 
 #version2
 
-# abc =	"abcdefghijklmnopqrstuvwxyz"
-    
-abc = string.ascii_lowercase
 
-ABC = string.ascii_uppercase
+import string
+
+ABC = list(string.ascii_uppercase)
+abc = list(string.ascii_lowercase)
 
 rotation = int(input("Enter your rotation "))
 user_input = input("Insert your code ")
 
+input = list(user_input)
 
-y = ""
-for i in user_input:
+y = []
+
+for i in input:
+    if i in ABC:
+        x = (ABC.index(i) + rotation) % 26
+        y += ABC[x]
+    elif i in abc:
         x = (abc.index(i) + rotation) % 26
         y += abc[x]
-
-print(y)
-
-
-y2 = ""
-for i in user_input:
-    x = (ABC.index(i) + rotation) % 26
-    y2 += ABC[x]
-
-print (y2)
-
-for char in string:
-    if input is letters: 
-        logic 
     else:
-        input.append(y)
+        y.append(i)
 
-###
+y = "".join(y)
 
+print(str(y))
 
-
-    
-x = i1 + i2 + i3 + i4
-x = list(x)
-random.shuffle(x)
-print("".join(x))
-
-
-# list(user_input)
-
-# y = []
-
-# for i in user_input:
-#     x = (abc.index(i) + rotation) % 26
-#     y += abc[x]
-# 
-#   if user_input not in abc:
-#         abc.append(y)
-#         y = y + i
-         
-
-# print("".join(z))
-
-# while True:
-#     question = (input("enter a number, or done "))
-#     if question == "done":
-#         break
-#     else:
-#         x = int(question)
-#         nums.append(x)
-
-
-"""
-slicing
-
-nums = [4, 56, 73, 12, 17, 99, 42, 87]
-
-
-
-print(nums[::]) whole string
-
-print(nums[3::]) starts the count at the 4th element
-
-print(nums[2:6:]) start at position 2 and then end at position before the 6th position
-
-print(nums[2:6:2]) start at 2, end before 6th position and skips by 2
-
-print(nums[::2]) skip by 2
-
-print(nums[-1::]) going backwards
- """
