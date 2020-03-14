@@ -1,6 +1,6 @@
-""" Deaundre """ 
+# Worked with Deaundre 
 
-import string 
+
 
 # # """
 # # Write a program that prompts the user for a string, and encodes it with ROT13. For each character, find the corresponding character, add it to an output string. Notice that there are 26 letters in the English language, so encryption is the same as decryption.
@@ -10,31 +10,16 @@ import string
 # # English	a	b	c	d	e	f	g	h	i	j	k	l	m	n	o	p	q	r	s	t	u	v	w	x	y	z
 # # ROT+13	n	o	p	q	r	s	t	u	v	w	x	y	z	a	b	c	d	e	f	g	h	i	j	k	l	m
 
-
-
-# # english = ["a",	"b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-# # rot13 = ["n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a",	"b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
-
-# english =	"abcdefghijklmnopqrstuvwxyz"
-# rot13 = "nopqrstuvwxyzabcdefghijklm"
-
-# user_input = input("Insert your code ").lower()
-
-# x = english.rindex(y)
-# print(x)
-
-# print(rot13[x::])
-
-
-#version1
-
 #start with a blank output string
 #loop through every character of the string that the user entered
 #find the index of that character in the alphabet
 #using the index, find the character in the rotated alphabet
 #append that character to the output string. 
 
-"""
+
+#version1
+
+import string 
 
 user_input = input("Insert your code ").lower()
 
@@ -46,12 +31,11 @@ y = ""
 
 for i in user_input: 
     x = english.index(i)
-    # print (rot13[x])
     y += rot13[x]
 
 print("".join(y))
 
-"""
+
 
 #version2
 
