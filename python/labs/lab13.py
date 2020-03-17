@@ -19,21 +19,21 @@
 
 #version1
 
-import string 
+# import string 
 
-user_input = input("Insert your code ").lower()
+# user_input = input("Insert your code ").lower()
 
-english = [" ", "a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+# english = [" ", "a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-rot13 = [" ", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a",	"b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
+# rot13 = [" ", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a",	"b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
 
-y = ""
+# y = ""
 
-for i in user_input: 
-    x = english.index(i)
-    y += rot13[x]
+# for i in user_input: 
+#     x = english.index(i)
+#     y += rot13[x]
 
-print("".join(y))
+# print("".join(y))
 
 
 
@@ -64,5 +64,5 @@ for i in input:
 
 y = "".join(y)
 
-print(str(y))
+print(y)
 
