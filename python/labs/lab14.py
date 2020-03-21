@@ -1,67 +1,59 @@
 import random
-import string 
 
-# def loops():
-#     y = 0 
-#     y = y + 1
-#     if y == 100,000:
-#         break
 
-ran = list(string.digits)
-balance = 0 
-
-def pick6():
+def pick6(): 
     x = 0
-    y = ""
-    while x <= 7:
+    y = []
+    while True:
+        ran = random.randrange(0,99)
         x = x + 1
-        y += random.choice(ran)
-        if x == 7:
-            cmp = list(y)
-            print(cmp)
+        y.append(ran)
+        if x == 6:
+            return y
             break
+
+
+def num_matches(comp, yours):
+
+    match = 0
+    for i in range(0,6):
+        if yours[i] == comp[i]:
+            match += 1
+        else:
+            match += 0 
+    return match
     
-    x1 = 0
-    y1 = ""
-    while x1 <= 7:
-        x1 = x1 + 1
-        y1 += random.choice(ran)
-        if x1 == 7:
-            yours = list(y1)
-            print(yours)
-            break
-        
     balance = 0
-
-    # for x,y in zip(cmp[::], yours[::]):
-    #     print (x,y)
-    if cmp[0] == yours[0]:
-        balance = (balance + 4)
-    elif cmp[0] != yours[0]:
-        balance = 0
-    elif cmp[1] == yours[1]:
-        balance = (balance + 7)
-    elif cmp[1] != yours[1]:
-        balance = 0
-    elif cmp[2] == yours[2]:
-        balance = (balance + 100)
-    elif cmp[2] != yours[2]:
-        balance = 0
-    elif cmp[3] == yours[3]:
-        balance = (balance + 7)
-    elif cmp[3] != yours[3]:
-        balance = 0
-    
-    
-    print(balance)
-
-            
-pick6()
+    new_balance = balance - 2
+    if match == 0: 
+        new_balance += 0 
+    elif match == 1:
+        new_balance += 4
+    elif match == 2: 
+        new_balance += 7
+    elif match == 3: 
+        new_balance += 100
+    elif match == 4:
+        new_balance += 50000
+    elif match == 5: 
+        new_balance += 1000000
+    elif match == 6:
+        new_balance += 25000000
+    return balance
 
 
+def compare():
+    current_balance = 0
 
+    comp = pick6()
+    yours = pick6()
 
-    
+    current_balance = current_balance + num_matches(comp, yours)
 
+    print(f'Winning ticket: {comp}')
+    print(f'Your ticket: {yours}')
+   
 
+    print(f'Your balance is: ${current_balance}')
 
+compare()

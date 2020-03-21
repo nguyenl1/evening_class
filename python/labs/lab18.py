@@ -10,72 +10,75 @@ data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 noindex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 POI = [' ',' ',' ',' ',' ',' ','P',' ',' ','V',' ',' ',' ',' ','P',' ',' ','V',' ',' ',' ',]
 
-# def peaks():
-#     length = len(data)
-#     middle_index = length//2
+def peaks():
+    length = len(data)
+    middle_index = length//2
 
-#     first_half = data[:middle_index]
-#     second_half = data[middle_index:]
-#     # peak = first_half.index('P')
+    first_half = data[:middle_index]
+    second_half = data[middle_index:]
+    # peak = first_half.index('P')
 
-#     peak = data.index(max(first_half))
-#     peak_2 = data.index(max(second_half))
+    peak = data.index(max(first_half))
+    peak_2 = data.index(max(second_half))
 
-#     print(f"The index of the peak on the left is {peak}")
-#     print(f"The index of the peak on the right is {peak_2}")
+    # if peak_2 == data[0] or peak_2 == data[20]:
+
+
+    # print(f"The index of the peak on the left is {peak}")
+    # print(f"The index of the peak on the right is {peak_2}")
     
 # peaks()
 
-# def valleys():
-#     length = len(data)
-#     middle_index = length//2
+def valleys():
+    length = len(data)
+    middle_index = length//2
 
-#     first_half = data[:middle_index]
-#     second_half = data[middle_index:]
+    first_half = data[:middle_index]
+    second_half = data[middle_index:]
 
-#     valley = data.index(min(first_half))
-#     valley_2 = data.index(min(second_half))
+    print (first_half)
+    print(second_half)
+    # valley = data.index(min(first_half))
+    # valley_2 = data.index(min(second_half))
 
-#     print(f"The index of the valley on the left is {valley}")
-#     print(f"The index of the valley on the right is {valley_2}")
+    # print(f"The index of the valley on the left is {valley}")
+    # print(f"The index of the valley on the right is {valley_2}")
 
-# valleys()
+valleys()
 
 
 # def peaks_and_valleys():
-    
-#     length = len(data)
-#     middle_index = length//2
+#     peaks()
+#     valleys()
+    # length = len(data)
+    # middle_index = length//2
 
-#     first_half = data[:middle_index]
-#     second_half = data[middle_index:]
-#     # peak = first_half.index('P')
+    # first_half = data[:middle_index]
+    # second_half = data[middle_index:]
+    # # peak = first_half.index('P')
 
-#     peak = data.index(max(first_half))
-#     peak_2 = data.index(max(second_half))
+    # peak = data.index(max(first_half))
+    # peak_2 = data.index(max(second_half))
 
-#     print(f"The index of the peak on the left is {peak}")
-#     print(f"The index of the peak on the right is {peak_2}")
+    # print(f"The index of the peak on the left is {peak}")
+    # print(f"The index of the peak on the right is {peak_2}")
 
 
-#     length = len(data)
-#     middle_index = length//2
+    # length = len(data)
+    # middle_index = length//2
 
-#     first_half = data[:middle_index]
-#     second_half = data[middle_index:]
+    # first_half = data[:middle_index]
+    # second_half = data[middle_index:]
 
-#     valley = data.index(min(first_half))
-#     valley_2 = data.index(min(second_half))
+    # valley = data.index(min(first_half))
+    # valley_2 = data.index(min(second_half))
 
-#     print(f"The index of the valley on the left is {valley}")
-#     print(f"The index of the valley on the right is {valley_2}")
+    # print(f"The index of the valley on the left is {valley}")
+    # print(f"The index of the valley on the right is {valley_2}")
 
 # peaks_and_valleys()
 
-length = len(POI)
-middle_index = length//2
-second_half = POI[middle_index:]
-valley_2 = second_half.index("V")
-print(valley_2)
 
-# print (POI.index("P"))
+
+
+
