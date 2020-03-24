@@ -104,5 +104,6 @@ def get_peaks(data):
     return peaks 
 
 def peaks_and_valleys():
+    get_data()
     print(get_peaks())
     print(get_valleys())
