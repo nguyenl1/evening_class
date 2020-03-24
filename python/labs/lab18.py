@@ -79,6 +79,8 @@ peaks_and_valleys - uses the above two functions to compile a single list of the
 # peaks_and_valleys()
 
 
+#jon's ex: 
+
 def get_data():
     data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
     return data
@@ -102,8 +104,3 @@ def get_peaks(data):
             if data[i] >= data [i-1] and data [i] >= data [i+1]:
                 peaks.append(i)
     return peaks 
-
-def peaks_and_valleys():
-    get_data()
-    print(get_peaks())
-    print(get_valleys())
