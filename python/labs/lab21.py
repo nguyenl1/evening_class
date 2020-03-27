@@ -1,9 +1,5 @@
-"""
-Open the file.
-Make everything lowercase, strip punctuation, split into a list of words.
-Your dictionary will have words as keys and counts as values. If a word isn't in your dictionary yet, add it with a count of 1. If it is, increment its count.
-Print the most frequent top 10 out with their counts. You can do that with the code below.
-"""
+
+""" Open the file.""" 
 
 # f = open("pg12296.txt", )
 # contents = f.read()
@@ -19,12 +15,14 @@ Print the most frequent top 10 out with their counts. You can do that with the c
 # finally:
 #     f.close()
 
+"""lowercase"""
+with open('pg12296.txt', 'r') as camps_trails:
+    for line in camps_trails:
+        line = line.lower()
+        print(line)
+camps_trails.close()
 
-# with open('pg12296.txt', 'r') as camps_trails:
-#     for line in camps_trails:
-#         line = line.lower()
-#         print(line)
-# camps_trails.close()
+"""strip punctuation"""
 
 # import string
 
@@ -32,18 +30,19 @@ Print the most frequent top 10 out with their counts. You can do that with the c
 # no_punc = ""
 # with open('pg12296.txt', 'r') as camps_trails:
 #     for line in camps_trails:
-#         if line not in chars: 
-#             no_punc = no_punc + line
-#     print(no_punc)
+#         line = line.replace(chars, "")
+#         print(line)
 # camps_trails.close()
 
-with open('pg12296.txt', 'r') as camps_trails:
-    for line in camps_trails:
-        word = line.split(" ")
-        # print (word)
-camps_trails.close()
+"""split into a list of words"""
 
+# with open('pg12296.txt', 'r') as camps_trails:
+#     for line in camps_trails:
+#         word = line.split(" ")
+#         # print (word)
+# camps_trails.close()
 
+""" Your dictionary will have words as keys and counts as values. If a word isn't in your dictionary yet, add it with a count of 1. If it is, increment its count. """
 
 # word_dict = {}
 
@@ -53,13 +52,16 @@ camps_trails.close()
 
 
 # print ([ [l, word.count(l)] for l in set(word)]) 
-print (dict( (l, word.count(l) ) for l in set(word))) 
+# print (dict( (l, word.count(l) ) for l in set(word))) 
 
 """
-# word_dict is a dictionary where the key is the word and the value is the count
-    words = list(word_dict.items()) # .items() returns a list of tuples
-    words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-    for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-        print(words[i])
+Print the most frequent top 10 out with their counts.
 """
+
+# # word_dict is a dictionary where the key is the word and the value is the count
+#     words = list(word_dict.items()) # .items() returns a list of tuples
+#     words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+#     for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+#         print(words[i])
+
             
