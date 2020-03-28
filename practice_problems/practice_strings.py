@@ -51,9 +51,30 @@ Write a function that returns the number of occurances of 'hi' in a given string
 def count_hi():
     li = []
     user_input = input("enter hi. ")
-    for i in range(0, len(user_input), 2):
-        out = user_input[i:i+2]
+    for i in range(0, len(user_input), 2): #(start, end, every 2nd letter)
+        #print(i)
+        out = user_input[i:i+2] #print [i = start value, i+2 = end value] of the user_input. Start with print [0,1] = "hi"
+        #print(out)
         li.append(out)
     print(li.count("hi"))
     
 count_hi()
+
+"""
+Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
+"""
+
+def cat_dog():
+    li = []
+    user_input = input("enter catdog. ")
+    for i in range(0, len(user_input), 3):
+        out = user_input[i:i+3]
+        li.append(out)
+    x = li.count("cat")
+    y = li.count("dog")
+    if x == y:
+        print("True")
+    else:
+        print(f" There's {x} cats and {y} dogs. False")
+    
+cat_dog()
