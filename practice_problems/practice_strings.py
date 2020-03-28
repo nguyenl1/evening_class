@@ -91,3 +91,12 @@ Return the number of letter occurances in a string.
 
 # print(count_letters('i', 'antidisestablishmentterianism'))
 
+"""
+Convert input strings to lowercase without any surrounding whitespace.
+"""
+
+def lower_case():
+    x = input("enter a word. ").lower()
+    print(x.strip())
+
+lower_case()
