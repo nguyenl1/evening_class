@@ -43,3 +43,20 @@ ari_scale = {
 
 
 print(f"The ARI for gettysburg-affress.txt is {12} 'n\ This corresponds to a {11th Grade} level of difficulty 'n\ that is suitable for an average person {16-17} years old")
+
+#steven's code
+
+"""
+def sentence_count(x):
+    x = ''.join(chr for chr in x)
+    x = x.replace(' ', '')
+    x = x.replace('?','.')
+    x = x.replace('!','.')
+    x = x.replace(':','.')
+    x = x.replace(';','.')
+    sentence_file = x.split('.')
+    return len(sentence_file)
+
+x being the input file created from the book import
+
+"""
