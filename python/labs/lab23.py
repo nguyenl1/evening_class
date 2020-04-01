@@ -22,11 +22,31 @@ for line in phone_book_data:
 
 
 
-# import csv 
+import csv 
 
-# # with open('lab23.csv', 'r') as file:
-# #     lines = file.read().split('\n')
-# #     print(lines)
+with open('lab23.csv', 'r') as file:
+    lines = file.read().split('\n')
+    print(lines)
+
+phonebook = []
+row_count = 0
+# open csv, set up dictionary
+with open('lab23.csv', 'r') as file:
+    read = csv.reader(file, delimiter=',')
+    for row in read:
+        # print(row)
+
+        if row_count == 0:
+            row_count+=1
+        else: 
+            phonebook.append(
+                {'name': row[0],
+                'favorite fruit': row[1],
+                'favorite color': row[2]
+                }
+            )
+
+print(f"Phonebook: {phonebook}")
 
 # with open('lab23.csv', 'r') as file:
 #     read = csv.DictReader(file, delimiter=',')
@@ -68,7 +88,7 @@ Delete a record: ask the user for the contact's name, remove the contact with th
 
 #https://thispointer.com/python-how-to-append-a-new-row-to-an-existing-csv-file/
 
-#modules
+# #modules
 from csv import writer
 import csv 
 
@@ -122,14 +142,14 @@ print(phonebook)
 # Append a list as new line to an old csv file
 # append_list_as_row('lab23.csv', phonebook)
 
-# with open('lab23.csv', 'r') as file:
-#     read = csv.DictReader(file, delimiter=',')
-#     for row in read:
-#         print(row)
-#         phonebook["name"] = row[0]
-#         phonebook["fav_fruit"] = row[1] #can you use an underscore? 
-#         phonebook["fav_color"] = row[2]
+with open('lab23.csv', 'r') as file:
+    read = csv.DictReader(file, delimiter=',')
+    for row in read:
+        print(row)
+        phonebook["name"] = row[0]
+        phonebook["fav_fruit"] = row[1] #can you use an underscore? 
+        phonebook["fav_color"] = row[2]
 
-# print(phonebook)
+print(phonebook)
 
 
