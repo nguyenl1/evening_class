@@ -5,11 +5,11 @@ def get_data():
 f = get_data()
 print(f)
 
-def check_digit(cc):
-    check_digit = cc[0:15]
+def check_digit(f):
+    check_digit = f[0:15]
     return check_digit
 
-a = check_digit(get_data())
+a = check_digit(f)
 print(a)
 
 def cc_reverse(a):
@@ -46,7 +46,7 @@ def nine(c):
             nine.append(subtract)
         else:
             nine.append(i)
-    print(nine)
+    return nine
 
 d = nine(c)
 print (d)
@@ -66,6 +66,8 @@ def match(e):
         print("Valid!")
     else:
         print("jk")
+
+match(e)
 
 
 

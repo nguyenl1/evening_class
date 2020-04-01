@@ -69,7 +69,7 @@ def compare():
 
         print(f'Your balance is: ${current_balance}')
 
-        if x == 100000:
+        if x == 100:
             break
 
 compare()

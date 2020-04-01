@@ -18,7 +18,7 @@ ones = [" ","one", "two", "three", "four", "five", "six", "seven", "eight", "nin
 hundreds = [" ", "one hundred and ", "two hundred and ", "three hundred and ", "four hundred and ", "five hundred and", "six hundred and ", "seven hundred and ", "eight hundred and ", "nine hundred and "]
 
 
-user_input = int(input("Enter a number or a roman numeral "))
+user_input = int(input("Enter a number "))
 
 
 def eng():

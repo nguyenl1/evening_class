@@ -7,11 +7,11 @@ Check if the two are equal
 
 
 def anagram (word_one, word_two):
-    if sorted(word_one).lower() == sorted(word_two).lower():
+    if sorted(word_one) == sorted(word_two):
         print("This is an anagram")
     else:
         print("This is not an anagram")
 
-word_one = input("Enter the first word: ")
-word_two = input("Enter the second word: ")
+word_one = input("Enter the first word: ").lower()
+word_two = input("Enter the second word: ").lower()
 anagram (word_one, word_two)
