@@ -83,3 +83,37 @@ elif att == "fav color":
     print (i)
 else: 
     print("Try again")
+
+with open('lab23.csv', 'w') as writeFile:
+
+    writer = csv.writer(writeFile)
+
+    writer.writerows(phonebook)
+
+""" Delete a record: ask the user for the contact's name, remove the contact with the given name from the contact list. """
+
+
+# phonebook = list()
+
+# user_input = input("Please enter the name of the person you would like to delete ").lower()
+
+# with open('lab23.csv', 'r') as file:
+
+#     read = csv.reader(file)
+
+#     for row in read:
+
+#         phonebook.append(row)
+
+#         for i in row:
+
+#             if i == user_input:
+
+#                 phonebook.remove(row)
+
+# with open('lab23.csv', 'w') as writeFile:
+
+#     writer = csv.writer(writeFile)
+
+#     writer.writerows(phonebook)
+
