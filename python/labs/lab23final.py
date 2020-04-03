@@ -53,42 +53,37 @@ import csv
 
 """Update a record: ask the user for the contact's name, then for which attribute of the user they'd like to update and the value of the attribute they'd like to set."""
 
-phonebook = []
-with open('lab23.csv') as file:
-    read = csv.DictReader(file, delimiter=',')
-    for row in read:
-        phonebook.append(row)
-    print(phonebook)
+# phonebook = []
+# with open('lab23.csv') as file:
+#     read = csv.DictReader(file, delimiter=',')
+#     for row in read:
+#         phonebook.append(row)
+#     print(phonebook)
 
-user_input = input("Please enter the name of the person you would information of. ").lower()
-
-
-for i in phonebook:
-    if i['name'] == user_input:
-        print(i)
-        break
-
-att = input("Which attribute would you like to update? (name, fav fruit, fav color) ")
-change = input("What would you like to update it to? ")
+# user_input = input("Please enter the name of the person you would information of. ").lower()
 
 
-if att == "name":
-    i["name"] = change
-    print (i)
-elif att == "fav fruit":
-    i["fav fruit"] = change
-    print (i)
-elif att == "fav color":
-    i['fav color'] = change
-    print (i)
-else: 
-    print("Try again")
+# for i in phonebook:
+#     if i['name'] == user_input:
+#         print(i)
+#         break
 
-with open('lab23.csv', 'w') as writeFile:
+# att = input("Which attribute would you like to update? (name, fav fruit, fav color) ")
+# change = input("What would you like to update it to? ")
 
-    writer = csv.writer(writeFile)
 
-    writer.writerows(phonebook)
+# if att == "name":
+#     i["name"] = change
+#     print (i)
+# elif att == "fav fruit":
+#     i["fav fruit"] = change
+#     print (i)
+# elif att == "fav color":
+#     i['fav color'] = change
+#     print (i)
+# else: 
+#     print("Try again")
+
 
 """ Delete a record: ask the user for the contact's name, remove the contact with the given name from the contact list. """
 
