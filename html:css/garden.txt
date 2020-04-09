@@ -1,0 +1,7 @@
+Didn't finish #26 and #28.
+
+26 solution: grid-template-rows: 1px 1px 1px 50px
+
+28 soluton: grid-template: 600px 100px / 135px 600px
+
+both solutions aren't correct but looks correct? 
