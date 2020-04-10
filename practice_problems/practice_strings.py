@@ -95,8 +95,50 @@ Return the number of letter occurances in a string.
 Convert input strings to lowercase without any surrounding whitespace.
 """
 
-def lower_case():
-    x = input("enter a word. ").lower()
-    print(x.strip())
+# def lower_case():
+#     x = input("enter a word. ").lower()
+#     print(x.strip())
 
-lower_case()
+# lower_case()
+
+
+"""
+Write a function that takes a string, and returns a list of strings, each missing a different character.
+"""
+
+# def missing_char():
+#     x = input("Enter a word ")
+#     for i in x: 
+#         y = x.replace(i,"")
+#         print(y)
+
+# missing_char()
+
+def missing_char():
+    x = input("Enter a word ")
+    final = []
+    i = 0
+    for i in x:
+        final.append(x[i])
+        print(final.replace(i,""))
+        i += 1
+
+missing_char()
+        
+
+
+
+def double(b):
+    final = []
+    i = 0
+    while i <= len(b):
+        double = b[i] * 2
+        final.append(double)
+    
+        if i+2 > len(b):
+            break
+    
+        final.append(b[i+1])
+        i += 2
+    
+    return final
