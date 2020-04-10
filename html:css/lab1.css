@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    height: 1000px;
+    width: 750px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a472a;
+    width: 500px;
+    height: 200px;
+    color: rgb(243, 243, 243);
+    box-shadow: 10px 10px 80px black;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+.profile {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid rgb(243, 243, 243);
+    margin-right: 10px;
+    
+}
+
+#quote {
+    
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    
+    color: black;
+    background-color: white;
+    width: 500px;
+    height: 100 px;
+    padding: 10px;
+}
+
+#bio {
+    
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    
+    color: black;
+    background-color: white;
+    width: 500px;
+    height: 150px;
+    padding: 10px;
+}
+
+#victims {
+    
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    
+    color: black;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+}
