@@ -1,21 +1,20 @@
 header{
-    grid-area: 1 / 1 / row1-end / 5;
+    grid-area: header | row1-start / 1 / row1-end / end;
     color:#89a3c8;
     padding: 10px;
-    margin: 10px;
-    justify-items: center;
-
+    
+    /* align-self: center; */
 }
 
 nav{
-    grid-area: 1 / col1-start / row1-end / 5;
+    grid-area: 2 / 1 / end / end;
     color:#89a3c8;
     padding: 10px;
     margin: 10px;
 }
 
 section{
-    grid-area: 2 / col3-start / third-line / 5;
+    grid-area: 2 / col4-start / third-line / 6;
     /* display:flex; */
     width: 500px;
     /* flex-direction: column;
@@ -33,7 +32,7 @@ aside{
 }
 
 footer{
-    grid-area: 4 / col1-start / first-line / 2;
+    grid-area: 4 / col1-start / first-line / end;
     background-color: #282828;
     border: 3px solid #89a3c8;
     color: #89a3c8;
@@ -44,6 +43,7 @@ footer{
 body {
     background-color: black;
     background-image: url("https://images.vexels.com/media/users/3/72688/preview2/a7c4b20e9bf9c64ce9b455a5f2e371a9-space-stars-background.jpg");
+    width: 500px;
 }
 
 p {
@@ -56,15 +56,16 @@ p {
 
 .container {
     display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-columns: 25px 25px 25px 25px;
     grid-template-rows: auto;
     grid-template-areas:
     "header header header header"
-    "nav . . nav"
+    "nav nav nav nav"
     "sidebar . . main"
     "footer footer footer footer";
     column-gap: 10px;
     row-gap: 15px;
     /* justify-items: stretch */
+    
 
 }
