@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+   
+    color:#89a3c8;
+    text-align: center;
+
+}
+
+nav {
+   
+    background-color:  #282828;
+    border: 3px solid  #89a3c8;
+    color: #89a3c8;
+    
+}
+
+
+
+footer{
+   
+    background-color: #282828;
+    border: 3px solid #89a3c8;
+    color: #89a3c8;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    
+}
+
+body {
+    background-color: black;
+    background-image: url("https://images.vexels.com/media/users/3/72688/preview2/a7c4b20e9bf9c64ce9b455a5f2e371a9-space-stars-background.jpg");
+    /* width: 500px; */
+}
+
+p {
+    background-color: #282828;
+    border: 3px solid #89a3c8;
+    color: #89a3c8;
+    
+}
+
+#title {
+    
+    background-color:  #282828;
+    border: 3px solid  #89a3c8;
+    color: #89a3c8;
+}
+    
+
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 20px;
+    
+}
+
+/* .row::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
