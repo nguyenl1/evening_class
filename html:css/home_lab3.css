@@ -1,5 +1,6 @@
 .header{
     padding-top: 100 px;
+    margin: 20px;
 }
 
 #carouselExampleFade{
@@ -17,20 +18,14 @@
     padding: 10px;
 }
 
-.responsive {
-    width: 500px;
+footer{
+   
+    background-color: lightgray;
+
+    bottom: 0;
+    left:0;
+    width: 100%;
     height: auto;
-    float: left;
 }
 
-.responsive2 {
-    width: 500px;
-    height: auto;
-    float: center;
-}
 
-.responsive3 {
-    width: 500px;
-    height: auto;
-    float: right;
-}
