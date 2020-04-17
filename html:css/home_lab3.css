@@ -1,0 +1,36 @@
+.header{
+    padding-top: 100 px;
+}
+
+#carouselExampleFade{
+    /* width:640px;
+    height:300px; */
+    margin: 10px;
+    padding: 10px;
+
+  }
+
+.quote {
+    text-align: center;
+    /* font-size: larger; */
+    margin: 20px;
+    padding: 10px;
+}
+
+.responsive {
+    width: 500px;
+    height: auto;
+    float: left;
+}
+
+.responsive2 {
+    width: 500px;
+    height: auto;
+    float: center;
+}
+
+.responsive3 {
+    width: 500px;
+    height: auto;
+    float: right;
+}
