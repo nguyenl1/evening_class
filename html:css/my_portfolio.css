@@ -21,13 +21,24 @@ body {
     background: url("https://i.ibb.co/4pXpkdz/About-Me.png") no-repeat;
 } */
 
-.card {
+.aboutme {
     width: 300px;
     height: 300px;
-    background: url("https://i.ibb.co/hMk8RdQ/About-Me-1.png?size=300") no-repeat;
+    background: url("https://i.ibb.co/M6BD09D/rsz-about-me-1.png") no-repeat;
     display: inline-block;
 }
-.card:hover {
-    background: url("https://i.ibb.co/4pXpkdz/About-Me.png?size=300") no-repeat;
+.aboutme:hover {
+    background: url("https://i.ibb.co/5cp0YFg/rsz-about-me.png") no-repeat;
+    
+}
+
+.mydesign {
+    width: 300px;
+    height: 300px;
+    background: url("https://i.ibb.co/Z66sBNM/About-Me-2.png") no-repeat;
+    display: inline-block;
+}
+.mydesign:hover {
+    background: url("https://i.ibb.co/jL9RPr4/About-Me-3.png") no-repeat;
     
 }
