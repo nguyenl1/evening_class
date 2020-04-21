@@ -1,0 +1,66 @@
+create directory "hello_world"
+pipenv shell -> create a shell. successfully create a virtual environment
+pip list -> pip setuptools wheel. Make sure you don't see your global installations
+pipenv install django 
+pip list -> django latest version
+django-admin startproject example . (DOT) #create project, dot puts file in current directory
+
+python3 manage.py startapp hello -> start project
+python manage.py runserver
+ctrl c -> ends the server
+
+go into settings.py in the project folder,  go down to installed apps -> add "hello", #add aplication name to installed apps
+-> you would have to do the step above to add 3rd party apps too 
+
+create file in aplication folder-> urls.py 
+inside the urls.py file 
+    #user created urls.py file for the application
+    
+    from django.urls import path
+    from . import views
+
+    #import the functions from our views file so we can reference them here
+    #the . specifies the curent director, so this is importing the views file from the current directiony
+
+    #MUST BE urlpatterns = []
+    urlpatterns = [
+        #create a path for your application-level routing
+        # ' ' refers to the "root" of the page/application
+        path("", views.hello, name = "hello"), #must know what functions you want in your views. 
+    ]
+
+go into your views.py
+
+    from django.shortcuts import render
+
+    #create views that you referenced in urls.py
+    #django views always take request as an argument
+
+    def hello(request):
+        return render(request, "index.html")
+
+Go into project level file into the urls.py file
+    from django.contrib import admin
+    from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include("hello.urls")),
+]
+
+in the root level of the directory structure, create a folder called templates. Should not be created in projects or application folder. Must be on the same level
+
+In templates
+
+    -create index.html file
+
+    write inside the body. 
+
+Go to project directory
+- go to settings.py
+- templatese 
+'DIRS' : [os.path.join(BASE_DIR, "templates")],
+
+python manage.py runserver to check if it works. 
+
+
