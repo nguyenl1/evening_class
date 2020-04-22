@@ -61,6 +61,6 @@ Go to project directory
 - templatese 
 'DIRS' : [os.path.join(BASE_DIR, "templates")],
 
-python manage.py runserver to check if it works. 
+python manage.py runserver #to check if it works. 
 
 
