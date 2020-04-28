@@ -1,4 +1,11 @@
 from django.db import models
+from django.conf import settings
+from django.utils import timezone
 
 class Task(models.Model):
-    task = models.CharField(max_length = 250, blank = False)
+    task_name = models.CharField(max_length = 250, blank = False)
+    desp = models.CharField(max_length = 250, blank = False)
+    due_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.task_name 
