@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Tasks 
+from .models import Task 
 
 # Create your views here.
 
@@ -7,19 +7,18 @@ def todo_app(request):
     return render(request, "index.html")
 
 def index(request):
-    tasks1 = Tasks(tasks = 'fold my clothes')
-    tasks2 = Tasks(tasks = 'wash the car')
-    tasks3 = Tasks(tasks= 'bathe the dogs')
+    task1 = Task(task = 'fold my clothes')
+    task2 = Task(task = 'wash the car')
+    task3 = Task(task= 'bathe the dogs')
 
-    tasks1.save()
-    tasks2.save()
-    tasks3.save()
+    task1.save()
+    task2.save()
+    task3.save()
 
     return render(request,'index.html')
 
 def showTasks(request):
-    tasks = Tasks.objects.all()
-    print(tasks)
+    tasks = Task.objects.all()
 
     context = {
         'tasks':tasks, 

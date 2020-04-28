@@ -8,12 +8,12 @@
 </head>
 <body>
     {% for task in tasks %}
-    <ul>
-        <li>tasks: {{task.tasks}}</li>
-    </ul>
-    {% empty %}
-        <p> there are no tasks to display</p>
-    {% end for %}
+        <ul>
+            <li> task: {{task.task}}</li>
+        </ul>
+        {% empty %}
+            <p> there are no tasks to display</p>
+    {% endfor %}
     
 </body>
 </html>
