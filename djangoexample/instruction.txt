@@ -1,0 +1,227 @@
+create directory "hello_world"
+pipenv shell -> create a shell. successfully create a virtual environment
+pip list -> pip setuptools wheel. Make sure you don't see your global installations
+pipenv install django 
+pip list -> django latest version
+django-admin startproject example . (DOT) #create project, dot puts file in current directory
+
+python3 manage.py startapp hello -> start project
+python manage.py runserver
+ctrl c -> ends the server
+
+go into settings.py in the project folder,  go down to installed apps -> add "hello", #add aplication name to installed apps
+-> you would have to do the step above to add 3rd party apps too 
+
+create file in aplication folder-> urls.py 
+inside the urls.py file 
+    #user created urls.py file for the application
+    
+    from django.urls import path
+    from . import views
+
+    #import the functions from our views file so we can reference them here
+    #the . specifies the curent director, so this is importing the views file from the current directiony
+
+    #MUST BE urlpatterns = []
+    urlpatterns = [
+        #create a path for your application-level routing
+        # ' ' refers to the "root" of the page/application
+        path("", views.hello, name = "hello"), #must know what functions you want in your views. 
+    ]
+
+go into your views.py
+
+    from django.shortcuts import render
+
+    #create views that you referenced in urls.py
+    #django views always take request as an argument
+
+    def hello(request):
+        return render(request, "index.html")
+
+Go into project level file into the urls.py file
+    from django.contrib import admin
+    from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include("hello.urls")),
+]
+
+in the root level of the directory structure, create a folder called templates. Should not be created in projects or application folder. Must be on the same level
+
+In templates
+
+    -create index.html file
+
+    write inside the body. 
+
+Go to project directory
+- go to settings.py
+- templatese 
+'DIRS' : [os.path.join(BASE_DIR, "templates")],
+
+python manage.py runserver #to check if it works. 
+
+----------------------------------------------------------------------------------
+
+how to add html/css
+
+- create a static folder in the same level of app and project
+- create folder called css and js
+- create files called style.css in css. main.js in js 
+
+go in settings.py in project folder 
+go down to static_url:
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] 
+
+go into index.html file
+-give a commnad: {% load static %}
+
+<link rel="stylesheet" href="{% static '../static/css/style.css'%}">
+
+javascript file
+<script src="{%static '..static/js/main.js'%}"></script>
+
+
+----------------------------------------------------------------------------------
+models.py file
+
+class User(models.Model):
+    first_name = models.CharField(max_length = 250, blank = Flase)
+    last_name = models.CharField(max_length = 250, blank = Flase)
+    age = models.IntergerField)default = 0, blank = False)
+    is_princess = models.BooleanField(blank = True, null = True)
+
+Whenever you create a model, you have to migrate your data base. You're building your data base based on everything you specified. 
+The way you tell django/python to migrate = python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+create a superuser:
+python manage.py createsuperuser
+
+python3 manage.py runserver
+root of the page/admin -> it'll lead you to the login page. 
+
+Use your models
+
+go into views.py 
+from .models import User (refers to the class)
+
+def index(request):
+    user1 = User(first_name = 'finn', last_name ='the human', age= 12, is_princess = False) -> right way to write it. 
+    user2 = User(2, 'marc', 'the vampire', 999, True)
+    user3 = User(3, 'pepbut', '', 1000, False)
+
+    user1.save()
+    user2.save()
+    user3.save()
+
+
+    return render(request,'index.html')
+
+def showUsers(request):
+    users = User.objects.all()
+    # print(users) -> will send you a Query Set
+
+    #pass information and putting it into a database: 
+
+    context = {
+        'users':users,
+    }
+
+    return render(request, 'users.html', context = context)
+
+You have to tell django you made a model and to tell it to go use it. 
+
+go to admin.py 
+
+from .models import User
+admin.site.register(User)
+
+urls.py in app level
+path('users', views.showUsers, name="showUsers")
+
+Go into templates
+
+create file users.html 
+
+inside body of the users.html file: 
+
+{% for user in users %}
+<ul>
+    <li>first name: {{user.firstname}}</li>
+    <li>last name: {{user.lastname}}</li>
+    <li>first age: {{user.age}}</li>
+    <li>is_princess: {{user.is_princess}}</li>
+</ul>
+
+{% empty %} #optional 
+<p> there are no user to display</p>
+
+{% endfor %}
+
+on index page
+
+<a href="{ % url 'showUsers' %}"></a></a> #showUsers is the name of the URL. 
+
+the link between your template and your server is that context. 
+
+    context = {
+        'users':users,
+    }
+
+    return render(request, 'users.html', context = context)
+
+----------------------------------------------------------------------------------
+
+template if statements
+
+{% if user.is_princess == True %}
+ <li> is_princess: {{ user.is_pricess }}</li>
+ {% else %}
+ <li>not a princess</li>
+
+
+----------------------------------------------------------------------------------
+
+RECAP
+
+create app
+
+create models -> live inside your app 
+
+in the models.py -> it stores your classes
+
+#once you create your model add it into your admin.py file 
+from .models imoprt User
+admin.site.register(User)
+
+#go to views.py
+from .models import User
+def index(request):
+    user_1=User(first_name="finn")
+
+    user_1.save()
+
+    return render(request,'index.html')
+
+#to show it on the webpage
+Go to templates
+create user.html file
+write a for loop to print all the users
+jinja syntax lets you use python in html
+
+#go to views.py 
+def showUsers(request):
+    users = User.objects.all()
+
+    context = {
+        "user": users,
+    }
+
+    return render (requst, 'users.html', context = context) -> context here links the front end and back end
+
+
+
