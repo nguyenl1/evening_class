@@ -1,15 +1,18 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '../static/css/todo.css'%}">
-    <title>Lynn's To-Do List</title>
-</head>
-<body>
+{% block content %}
+
     <h2> My to-do list</h2>
-    <p><a href="{ % url 'showTasks' %}"></a></p>
-</body>
-</html>
+
+    {% for task in tasks %}
+        <ul>
+            <li> task name: {{task.task_name}}</li>
+            <li> task description: {{task.desp}}</li>
+            <li> due date: {{task.due_date}}</li>
+        </ul>
+        {% empty %}
+            <p> there are no tasks to display</p>
+    {% endfor %}
+    
+
+{% endblock %}

@@ -4,8 +4,6 @@ from django.utils import timezone
 
 class Task(models.Model):
     task_name = models.CharField(max_length = 250, blank = False)
-    desp = models.CharField(max_length = 250, blank = False)
+    desp = models.TextField()
     due_date = models.DateTimeField(blank=True, null=True)
 
-    def __str__(self):
-        return self.task_name 

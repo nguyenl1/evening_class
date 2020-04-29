@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>
+        <form action="{% url 'showTasks' %}" method="POST">
+            {% csrf_token %}
+        
+    </p>
+    
+
+{% endblock %}
+

@@ -15,7 +15,7 @@ def index(request):
     task2.save()
     task3.save()
 
-    return render(request,'index.html')
+    return render(request,'create_task.html')
 
 def showTasks(request):
     tasks = Task.objects.all()
@@ -24,4 +24,4 @@ def showTasks(request):
         'tasks':tasks, 
     }
 
-    return render(request,'tasks.html', context=context)
+    return render(request,'index.html', context=context)
