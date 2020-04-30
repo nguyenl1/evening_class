@@ -3,8 +3,21 @@
 {% block content %}
 
     <p>
+        
+        
         <form action="{% url 'showTasks' %}" method="POST">
             {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Enter your task</label>
+                  <input type="email" class="form-control" id="Inputtasks" aria-describedby="todo">
+                  <small id="todo" class="form-text text-muted">LET'S GET THINGS DONE</small>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Completed?</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
         
     </p>
     

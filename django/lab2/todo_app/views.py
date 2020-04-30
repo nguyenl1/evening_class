@@ -6,6 +6,9 @@ from .models import Task
 def todo_app(request):
     return render(request, "index.html")
 
+def create_tasks(request):
+    return render(request,'create_task.html')
+
 def index(request):
     task1 = Task(task_name = 'laundry', desp = 'fold my clothes', due_date = ' ')
     task2 = Task(task_name = 'car', desp = 'wash the car', due_date = ' ')
