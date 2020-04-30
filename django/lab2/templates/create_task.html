@@ -5,7 +5,7 @@
     <div class="container">
         
         
-        <form action="{% url 'showTasks' %}" method="POST">
+        <form action="{% url 'todo_app' %}" method="POST">
             {% csrf_token %}
                 <div class="form-group">
                   <label for="exampleInputEmail1">Enter your task</label>

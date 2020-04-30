@@ -1,30 +1,33 @@
 from django.shortcuts import render
+from django.utils import timezone
 from .models import Task 
 
 # Create your views here.
 
 def todo_app(request):
-    return render(request, "index.html")
+    return render(request, "index.html", {})
 
 def create_tasks(request):
     return render(request,'create_task.html')
 
-def index(request):
-    task1 = Task(task_name = 'laundry', desp = 'fold my clothes', due_date = ' ')
-    task2 = Task(task_name = 'car', desp = 'wash the car', due_date = ' ')
-    task3 = Task(task_name = 'doggos', desp = 'bathe the dogs', due_date = ' ')
 
-    task1.save()
-    task2.save()
-    task3.save()
 
-    return render(request,'create_task.html')
+# def index(request):
+#     task1 = Task(task_name = 'laundry', desp = 'fold my clothes', due_date = ' ')
+#     task2 = Task(task_name = 'car', desp = 'wash the car', due_date = ' ')
+#     task3 = Task(task_name = 'doggos', desp = 'bathe the dogs', due_date = ' ')
 
-def showTasks(request):
-    tasks = Task.objects.all()
+#     task1.save()
+#     task2.save()
+#     task3.save()
 
-    context = {
-        'tasks':tasks, 
-    }
+#     return render(request,'create_task.html')
 
-    return render(request,'index.html', context=context)
+# def showTasks(request):
+#     tasks = Task.objects.all()
+
+#     context = {
+#         'tasks':tasks, 
+#     }
+
+#     return render(request,'index.html', context=context)
