@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Task 
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -8,26 +9,38 @@ def todo_app(request):
     return render(request, "index.html", {})
 
 def create_tasks(request):
-    return render(request,'create_task.html')
+    if request.method == 'POST':
+        data = request.POST
+        Task.objects.create(
+            task_name = data['task_name'],
+            desp = data['desp'],
+            due_date = data['due_date']
+
+        )
+
+        return redirect('todo_app')
+    else:
+        return HttpResponse('invalid method')
 
 
+def task_detail(request,pk):
+    task = get_list_or_404(Task, pk=pk)
+    return render(request,'view_tasks.html', {'post':post})
 
-# def index(request):
-#     task1 = Task(task_name = 'laundry', desp = 'fold my clothes', due_date = ' ')
-#     task2 = Task(task_name = 'car', desp = 'wash the car', due_date = ' ')
-#     task3 = Task(task_name = 'doggos', desp = 'bathe the dogs', due_date = ' ')
+def remove_task(request):
+    return render(request, "remove_tasks.html")
 
-#     task1.save()
-#     task2.save()
-#     task3.save()
+def list_tasks(request):
+    return render(request, "view_tasks.html")
 
-#     return render(request,'create_task.html')
+def completed(request):
+    pass 
 
-# def showTasks(request):
-#     tasks = Task.objects.all()
+def showTasks(request):
+    tasks = Task.objects.all()
 
-#     context = {
-#         'tasks':tasks, 
-#     }
+    context = {
+        'tasks':tasks, 
+    }
 
-#     return render(request,'index.html', context=context)
+    return render(request,'index.html', context=context)
