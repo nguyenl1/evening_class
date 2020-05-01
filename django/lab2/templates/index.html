@@ -3,8 +3,16 @@
 {% block content %}
 
         <div class="POST">
-        
-            <h2><a href="{% url 'tasks_detail' pk=task.pk %}">{{task.task_name}}</a></h2>
+            <div class = "container">
+                <h2>My Tasks</h2>
+
+                {% for task in tasks %}
+                    <ul> 
+                        <li> {{ task.task_name }} </li>
+                    </ul>
+                {% endfor %}
+
+            </div>
 
         </div>
     

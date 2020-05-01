@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="post">
-        <h2>{{ task.title }}</h2>
-        <p>{{ task.text }}</p>
+    
+        {% for task in tasks %}
+        <div class ='container'>
+                <h2> {{ task.task_name }}</h2>
+                <p> Due Date: {{ task.due_date }}</p>
+                <p> Completed? {{ task.is_completed}} </p>
+        {% empty %}
+                <p> there are no tasks to display </p>
+        </div>
+        {% endfor %}
+    
 
-    </div>
+
+   
         
 
 {% endblock %}
