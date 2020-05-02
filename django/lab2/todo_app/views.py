@@ -18,7 +18,7 @@ def todo_app(request):
 
     return render(request, "index.html", context=context)
 
-def showTasks(request):
+def show_tasks(request):
     tasks = Task.objects.all()
 
     context = {
@@ -28,26 +28,36 @@ def showTasks(request):
     return render(request,'view_tasks.html', context=context)
 
 def create_tasks(request):
-    # if request.method == 'POST':
-    #     data = request.POST
-    #     Task.objects.create(
-    #         task_name = data['task_name'],
-    #         due_date = data['due_date'],
-    #         is_completed = data['is_completed']
-    #     )
+    if request.method == 'POST':
+        data = Task(request.POST)
+        
+        is_completed = False
 
-    #     task_name.save()
-    #     due_date.save()
-    #     is_completed()
+        create_task = Task()
+        create_task.task_name = task_name
+        create_task.due_date = due_date 
+        create_task.is_completed = is_completed
+        create_task.save()
 
         return render(request, "create_task.html")
-    # else:
-    #     return HttpResponse('invalid method')
+    else:
+        return HttpResponse('invalid method')
 
-def remove_task(request):
+def remove_tasks(request,id):
     return render(request, "remove_tasks.html")
 
 def completed(request):
     pass 
+
+def show_details(request,id):
+    desp = Task.objects.get(pk=id)
+
+    print(desp.task_name)
+
+    context = {
+        'desp':desp,
+    }
+
+    return render(request, "show_details.html", context=context)
 
 

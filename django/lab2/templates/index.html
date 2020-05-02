@@ -8,7 +8,7 @@
 
                 {% for task in tasks %}
                     <ul> 
-                        <li> {{ task.task_name }} </li>
+                        <li><h4><a href= "{% url 'showDetails' task.id %}"> {{ task.task_name }} </a></h4> </li>
                     </ul>
                 {% endfor %}
 
