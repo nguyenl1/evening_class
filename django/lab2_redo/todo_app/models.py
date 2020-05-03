@@ -1,3 +1,11 @@
 from django.db import models
+from django.conf import settings
+from django.utils import timezone
 
-# Create your models here.
+class TodoItem(models.Model):
+    task_name = models.CharField(max_length = 250, blank = False)
+    due_date = models.DateTimeField (blank=True, null=True)
+    is_completed = models.BooleanField(default=False)
+
+    
+
