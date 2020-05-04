@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-hi
+    <div class="container">
+        <h2>{{desp.task_name}}</h2>
+        <p>Due Date: {{desp.due_date}} </p>
+        <p>Completed? {{desp.is_completed}}</p>
+    </div>
 {% endblock %}

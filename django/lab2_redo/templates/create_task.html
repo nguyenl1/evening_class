@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-hi
+<h2>Add Tasks</h2>
+
+<hr>
+
+<form method="POST">
+    {% csrf_token %}
+    Task Name : <input type="text" placeholder="Enter Task Here" name="task_name" required/><br>
+    Due Date: <input type="date" name="due_date" required/><br>
+    Completed? <input type="checkbox" name="is_completed"/><br>
+    <input type="submit" value="Submit Task"/>
+</form>
 {% endblock %}
