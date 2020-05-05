@@ -6,10 +6,12 @@
             <center> 
                 <h2>My Tasks</h2>
             </center>
+        <hr>    
         <div class = "container">        
                 {% for task in tasks %}
                     <ul> 
-                        <li><h4><a href= "{% url 'task_details' task.id %}"> {{ task.task_name }} </a></h4> </li>
+                        <li><h4><a href= "{% url 'task_details' task.id %}"> {{ task.task_name }} </a></h4> 
+                        </li>
                     </ul>
                 {% endfor %}
             

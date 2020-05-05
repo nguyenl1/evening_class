@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<center> 
+    <h2>Task Detail</h2>
+</center>
     <div class="container">
         <h2>{{desp.task_name}}</h2>
         <p>Due Date: {{desp.due_date}} </p>
         <p>Completed? {{desp.is_completed}}</p>
+        <a href="{% url 'create_task' %}" class="btn btn-danger" role="button" aria-pressed="true">Delete Task</a>
     </div>
+
 {% endblock %}

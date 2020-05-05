@@ -22,9 +22,41 @@ def task_details(request, id):
     return render(request, "task_details.html", context=context)
 
 def remove_task(request):
-    return render(request, "remove_task.html")
+    list_tasks = TodoItem.objects.all()
+
+    context = {
+        'tasks':list_tasks,
+    }
+    return render(request, "remove_task.html", context=context)
+
+
+
 
 def create_task(request):
+
+       #https://stackoverflow.com/questions/57288652/save-html-form-data-in-database-django?rq=1
+
+    if request.method == 'POST':
+        
+        task_name = request.POST['task_name']
+        due_date = request.POST['due_date']
+        
+        is_completed = request.POST.get['is_completed']
+        if not is_completed:
+            is_completed = True
+        toSave = models.TodoItem(is_completed = is_completed)
+        toSave.save()
+        
+
+        sub = TodoItem.objects.create(task_name=task_name, due_date=due_date, )
+
+        return redirect('create_task')
+    else:
+        return render(request,'create_task.html')
+
+
+    
+
     # if request.method=='POST': 
     #     if request.POST.get('task_name') and request.POST.get('due_date') and request.POST.get('is_completed'):
     #         create_task=TodoItem()
@@ -70,14 +102,10 @@ def create_task(request):
     # else:
     #     return HttpResponse('invalid method')
 
-    if request.method == 'POST':
-        task_name = request.POST['task_name']
-        due_date = request.POST['due_date']
-        # is_completed = request.POST['is_completed']
 
-        sub = TodoItem.objects.create(task_name=task_name, due_date=due_date)
+ 
 
-        return redirect('create_task')
-    else:
-        return render(request,'create_task.html')
+
+
+        
 
