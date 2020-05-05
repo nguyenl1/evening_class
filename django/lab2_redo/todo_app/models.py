@@ -7,5 +7,11 @@ class TodoItem(models.Model):
     due_date = models.DateTimeField (blank=True, null=True)
     is_completed = models.BooleanField(default=False)
 
+    def complete_task(self):
+        self.is_completed = True
+        return self.is_completed
+
+
+
     
 

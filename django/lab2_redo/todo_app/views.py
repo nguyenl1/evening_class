@@ -30,6 +30,9 @@ def remove_task(request):
     return render(request, "remove_task.html", context=context)
 
 
+def update_task(request):
+    #checkmark
+    #edit current tasks
 
 
 def create_task(request):
@@ -41,21 +44,17 @@ def create_task(request):
         task_name = request.POST['task_name']
         due_date = request.POST['due_date']
         
-        is_completed = request.POST.get['is_completed']
-        if not is_completed:
-            is_completed = True
-        toSave = models.TodoItem(is_completed = is_completed)
-        toSave.save()
-        
 
-        sub = TodoItem.objects.create(task_name=task_name, due_date=due_date, )
+        TodoItem.objects.create(task_name=task_name, due_date=due_date, )
+
+        
 
         return redirect('create_task')
     else:
         return render(request,'create_task.html')
 
 
-    
+
 
     # if request.method=='POST': 
     #     if request.POST.get('task_name') and request.POST.get('due_date') and request.POST.get('is_completed'):
