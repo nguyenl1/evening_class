@@ -23,7 +23,7 @@ def task_details(request, id):
     return render(request, "task_details.html", context=context)
 
 def remove_task(request,id):
-    task = get_object_or_404(TodoItem,pk=id)
+    task = get_object_or_404(TodoItem, pk=id)
     task.delete()
     return redirect("home")
 

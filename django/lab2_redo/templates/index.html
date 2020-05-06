@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class = "container">  
     <div class="POST">
         
-            <center> 
-                <h2>My Tasks</h2>
-            </center>
+            
+                <h2>Things To Do</h2>
+            
         <hr>    
-        <div class = "container">        
+              
                 {% for task in tasks %}
                     <ul> 
                         <li><h4><a href= "{% url 'task_details' task.id %}"> {{ task.task_name }} </a></h4> 
@@ -15,7 +16,7 @@
                     </ul>
                 {% endfor %}
             
-        </div>
-
     </div>
+
+</div>
 {% endblock %}
