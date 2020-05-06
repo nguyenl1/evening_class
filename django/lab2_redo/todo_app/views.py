@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import TodoItem
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 
 def home(request):
@@ -21,18 +22,32 @@ def task_details(request, id):
 
     return render(request, "task_details.html", context=context)
 
-def remove_task(request):
-    list_tasks = TodoItem.objects.all()
+def remove_task(request,id):
+    task = get_object_or_404(TodoItem,pk=id)
+    task.delete()
+    return redirect("home")
+
+def edit_task(request,id):
+    task = TodoItem.objects.get(pk=id)
 
     context = {
-        'tasks':list_tasks,
+        'task': task
     }
-    return render(request, "remove_task.html", context=context)
+    return render(request,"edit_task.html", context=context)
 
 
-def update_task(request):
-    #checkmark
-    #edit current tasks
+def update_task(request,id):
+    
+
+    task = TodoItem.objects.get(pk=id)
+
+    if request.POST.get('is_completed', False) == "on":
+        task.task_name = request.POST['task_name']
+        task.complete_task()
+        task.save()
+
+
+    return redirect('home')
 
 
 def create_task(request):
@@ -52,59 +67,4 @@ def create_task(request):
         return redirect('create_task')
     else:
         return render(request,'create_task.html')
-
-
-
-
-    # if request.method=='POST': 
-    #     if request.POST.get('task_name') and request.POST.get('due_date') and request.POST.get('is_completed'):
-    #         create_task=TodoItem()
-    #         create_task.task_name=request.POST.get('task_name')
-    #         create_task.due_date=request.POST.get('due_date')
-    #         create_task.is_completed=request.POST.get('is_completed')
-    #         create_task.save()
-
-    #         return render(request, "create_task.html")
-    # else:
-    #     return HttpResponse('invalid method')
-
-    # if request.method == 'POST':
-    #     data = request.POST
-
-    #     taskText = data['taskText']
-    #     is_completed = False
-
-    #     new_task = TodoItem()
-    #     new_task.task_name = taskText
-    #     new_task.save()
-
-    #     return redirect('home')
-    # elif request.method == 'GET':
-    #     return render(request,'create_task.html')
-    # else:
-    #     return HttpResponse('invalid method')
-
-    # if request.method == 'POST':
-    #     data = request.POST
-
-    #     TodoItem.objects.create(
-    #         task_name = data['task_name'],
-    #         due_date = data['due_date'],
-    #         is_completed = data ['is_completed'],
-    #     )
-
-    #     task_name.save()
-    #     due_date.save()
-    #     is_completed()
-
-    #     return redirect('create_task')
-    # else:
-    #     return HttpResponse('invalid method')
-
-
- 
-
-
-
-        
 

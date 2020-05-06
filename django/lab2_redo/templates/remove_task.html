@@ -1,21 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="POST">
-        
-            <center> 
-                <h2>Remove Task</h2>
-            </center>
-        <hr>    
-        <div class = "container">        
-                {% for task in tasks %}
-                    <ul> 
-                        <li><h4><a href= "{% url 'task_details' task.id %}"> {{ task.task_name }} </a></h4> 
-                        </li>
-                    </ul>
-                {% endfor %}
-            
-        </div>
 
-    </div>
+<form action='.' method='POST'>
+    {% csrf_token %}
+        <h2>Do you want to delete this task?</h2>
+        <p><input type='submit' value='Yes'/> <a href="{% url 'home' %}"> Cancel </a></p>
+</form>
 {% endblock %}
