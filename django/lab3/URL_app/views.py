@@ -12,7 +12,7 @@ def home(request):
         url_link = request.POST['url_link']
 
         UrlForm.objects.create(site_name=site_name, url_link=url_link, )
-        
+
     return render(request, "home.html")
 
 def save_url(request):
@@ -28,9 +28,10 @@ def code(request):
         i += random.choice(new)
         if y == 6:
             break
-    print (i)
 
-    new_url == i 
+    new_url = i 
+
+    print("https://www.myurl.com/" + f"{new_url}")
 
     pass 
 
