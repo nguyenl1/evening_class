@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "container">
+    <div class="POST">
+
+        <h2> View URLs </h2>
+        <hr>
+
+        {% for view in views %}
+            <ul>
+                <li><h2> {{ view.site_name }} : new URL </h2></li>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
