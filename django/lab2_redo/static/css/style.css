@@ -1,14 +1,22 @@
 .container{
-    display: flex;
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    align-items: center;
-    justify-self: center;
-    width: fit-content;
-    height: 100%;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: [line1] 40px [line2] 50px [line3] 100px [line4]50px [line5]40px [end];
+    grid-template-rows: [row1] 25% [row2] 100px [row3] 100px [row4] auto [end]; 
+    grid-template-areas: 
+        "header header header header"
+        ". main main main ."
+        "footer footer footer footer";
 
+}
+
+nav {
+    grid-area: header; 
+}
+
+.main {
+    grid-area: main;
+    background: white;
+    width: 500px;
 }
 
 body{

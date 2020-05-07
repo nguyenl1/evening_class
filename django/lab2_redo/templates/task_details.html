@@ -5,12 +5,14 @@
     <h2>Task Detail</h2>
     
     <hr>
+    <div class="main">
     
         <h3>{{desp.task_name}}</h3>
         <p>Due Date: {{desp.due_date}} </p>
         <p>Completed? {{desp.is_completed}}</p>
         <a href="{% url 'remove_task' desp.id %}" class="btn btn-danger" role="button" aria-pressed="true">Delete Task</a>
         <a href="{% url 'edit_task' desp.id %}" class="btn btn-success" role="button" aria-pressed="true"> Edit Task </a>
+    </div>
 </div>
 
     
