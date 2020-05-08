@@ -21,9 +21,9 @@ class UrlForm(models.Model):
             if y == 6:
                 break
         
-        new_url = "https://www.myurl.com/" + f"{i}"
+        # new_url = "https://www.myurl.com/" + f"{i}"
 
-        self.code = new_url
+        self.code = i
         
         return self.code
 

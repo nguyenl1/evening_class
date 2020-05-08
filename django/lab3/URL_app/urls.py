@@ -5,6 +5,8 @@ urlpatterns = [
     path('', views.home, name = "home"), 
     path('viewurls', views.view_url, name= "view_url"),
     path('saveurls', views.save_url, name = "save_url"),
-    path('newurl/<int:id>', views.new_url, name="new_url"),
+    path('newurl', views.new_url, name="new_url"),
+    path('convert', views.convert, name="convert")
+    
     
 ]
