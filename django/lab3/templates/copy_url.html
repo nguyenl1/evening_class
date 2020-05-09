@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>URL Detail</h2>
+    
+    <hr>
+    <div class="main">
+    
+        <h3>{{details.site_name}}</h3>
+        <p>your new short url is <a href= "{{ details.url_link }}"> https://www.myurl.com/{{ details.code }} </a>  </p>
+    </div>
+</div>
+
+    
+
+{% endblock %}

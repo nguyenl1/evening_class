@@ -8,19 +8,20 @@ def home(request):
 
     if request.method == "POST":
 
+        
+
         site_name = request.POST['site_name']
         url_link = request.POST['url_link']
 
-        
         last = UrlForm.objects.last()
         code = last.short_url()
 
         latest_en = UrlForm.objects.create(site_name=site_name, url_link=url_link, code=code)
 
-        
+        a = UrlForm.objects.filter(site_name)
 
-    
         return redirect("new_url")
+
     return render(request, "home.html")
 
 
@@ -34,11 +35,6 @@ def new_url(request):
 
     return render(request, "new_url.html", context=context)
 
-    
-
-def save_url(request):
-    return redirect("home")
-
 
 def view_url(request):
     list_urls = UrlForm.objects.all()
@@ -49,8 +45,11 @@ def view_url(request):
     }
     return render(request,"view_urls.html", context=context)
 
+def copy_url(request,id):
+    details = UrlForm.objects.get(pk=id)
 
+    context = {
+        'details':details,
+    }
 
-# if UrlForm.site_name == site_name:
-#             UrlForm.objects.get(site_name=site_name)
-#             return UrlForm.code 
+    return render(request, "copy_url.html", context=context)

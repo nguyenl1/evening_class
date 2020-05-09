@@ -10,7 +10,7 @@
 
         {% for view in views %}
             <ul>
-                <li><h2> {{ view.site_name }} : https://www.myurl.com/{{ view.code }}</h2></li>
+                <li><h2> {{ view.site_name }} : <a href= "{{ view.url_link }}"> https://www.myurl.com/{{ view.code }} </a> </h2></li>
             </ul>
         {% endfor %}
     </div>
