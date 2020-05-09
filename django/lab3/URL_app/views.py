@@ -15,23 +15,24 @@ def home(request):
         last = UrlForm.objects.last()
         code = last.short_url()
 
-        UrlForm.objects.create(site_name=site_name, url_link=url_link, code=code)
+        latest_en = UrlForm.objects.create(site_name=site_name, url_link=url_link, code=code)
 
+        
 
-        if UrlForm.site_name == site_name:
-            UrlForm.objects.get(site_name=site_name)
-            return UrlForm.code 
     
+        return redirect("new_url")
     return render(request, "home.html")
 
 
-def convert(request):
+def new_url(request):
 
     last = UrlForm.objects.last()
 
-    code = last.short_url()
+    context = {
+        'short':last, 
+    }
 
-    return redirect('new_url')
+    return render(request, "new_url.html", context=context)
 
     
 
@@ -48,12 +49,8 @@ def view_url(request):
     }
     return render(request,"view_urls.html", context=context)
 
-def new_url(request):
-    last = UrlForm.objects.last()
 
-    context = {
-        'short':last, 
-    }
 
-    return render(request, "new_url.html", context=context)
-
+# if UrlForm.site_name == site_name:
+#             UrlForm.objects.get(site_name=site_name)
+#             return UrlForm.code 
