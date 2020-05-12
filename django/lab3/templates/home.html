@@ -7,13 +7,19 @@
 
     <hr>
 
-    <form method="POST">
+    <form action="{% url 'home' %}" method="POST">
         {% csrf_token %}
-        Site Name: <input type="text" placeholder="Enter Website Name Here" name="site_name" required/><br>
-        URL Link: <input type="text" placeholder="Enter Website URL Here" name="url_link" required/><br>
-        <input type="submit" value="Shorten URL"/>
+        <div class="row">
+            <div class="col">
+                Site Name: <input type="text" class="form-control" placeholder="Enter Website Name Here" name="site_name" required/><br>
+            </div>
+            <div class="col">
+                URL Link: <input type="text" class="form-control" placeholder="Enter Website URL Here" name="url_link" required/><br>
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </div>
+
 
 
 {% endblock %}

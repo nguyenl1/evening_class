@@ -6,9 +6,11 @@
     
     <hr>
     <div class="main">
-    
-        <h3>{{details.site_name}}</h3>
-        <p>your new short url is <a href= "{{ details.url_link }}"> https://www.myurl.com/{{ details.code }} </a>  </p>
+    {% for site in copy %}
+        <h3>{{site.site_name}}</h3>
+        <p>your short url is <a href= "{{ site.url_link }}"> https://www.myurl.com/{{ site.code }} </a>  </p>
+    {% endfor %}
+        
     </div>
 </div>
 

@@ -7,12 +7,25 @@
 
         <h2> View URLs </h2>
         <hr>
-
-        {% for view in views %}
-            <ul>
-                <li><h2> {{ view.site_name }} : <a href= "{{ view.url_link }}"> https://www.myurl.com/{{ view.code }} </a> </h2></li>
-            </ul>
-        {% endfor %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Site Name</th>
+                    <th scope="col">Shorten URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for view in views %}
+                    <tr>
+                    
+                        <th scope="row">{{ view.site_name }} </th>
+                        <td><a href= "{{ view.url_link }}"> https://www.myurl.com/{{ view.code }} </a></td> 
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
     </div>
 </div>
 
