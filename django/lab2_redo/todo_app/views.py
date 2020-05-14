@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import TodoItem
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 
 def home(request):
@@ -13,6 +16,7 @@ def home(request):
     
     return render(request, "index.html", context=context)
 
+@login_required
 def task_details(request, id):
     desp = TodoItem.objects.get(pk=id)
 
@@ -22,11 +26,13 @@ def task_details(request, id):
 
     return render(request, "task_details.html", context=context)
 
+@login_required
 def remove_task(request,id):
     task = get_object_or_404(TodoItem, pk=id)
     task.delete()
     return redirect("home")
 
+@login_required
 def edit_task(request,id):
     task = TodoItem.objects.get(pk=id)
 
