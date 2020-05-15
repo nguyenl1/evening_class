@@ -1,3 +1,23 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+from django.conf import settings 
 
-# Create your models here.
+class Book(models.Model):
+    author = models.CharField(max_length = 200)
+    title = models.CharField(max_length = 200)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+
+
+class Checkout(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.SET_NULL, null = True)
+    borrower = models.ForeignKey(get_user_model(), on_delete= models.SET_NULL, null=True, blank=True)
+    checkout_date = models.DateTimeField(default=timezone.now)
+    due_date = models.DateTimeField(blank=True, null=True)
+
+   
