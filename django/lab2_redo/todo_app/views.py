@@ -41,7 +41,7 @@ def edit_task(request,id):
     }
     return render(request,"edit_task.html", context=context)
 
-
+@login_required
 def update_task(request,id):
     
 
@@ -55,7 +55,7 @@ def update_task(request,id):
 
     return redirect('home')
 
-
+@login_required
 def create_task(request):
 
        #https://stackoverflow.com/questions/57288652/save-html-form-data-in-database-django?rq=1
@@ -73,4 +73,3 @@ def create_task(request):
         return redirect('create_task')
     else:
         return render(request,'create_task.html')
-
