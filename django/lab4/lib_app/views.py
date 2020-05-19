@@ -21,3 +21,15 @@ def book_details (request,id):
     }
 
     return render(request, "lib_app/book_details.html", context=context)
+
+def checked_out (request,id):
+    borrowed = Checkout.objects.get(pk=id)
+
+    if request.POST.get('checked_out', False) == "on":
+        borrowed.borrowed()
+        borrowed.save()
+
+        return redirect('list_books')
+
+def my_books (request):
+    pass 

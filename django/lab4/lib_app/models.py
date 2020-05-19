@@ -20,5 +20,10 @@ class Checkout(models.Model):
     borrower = models.ForeignKey(get_user_model(), on_delete= models.SET_NULL, null=True, blank=True)
     checkout_date = models.DateTimeField(default=timezone.now)
     due_date = models.DateTimeField(blank=True, null=True)
+    checked_out = models.BooleanField(default=False)
+
+    def borrowed(self):
+        self.checked_out = True
+        return self.checked_out
 
    
