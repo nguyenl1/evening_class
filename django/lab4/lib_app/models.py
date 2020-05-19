@@ -6,6 +6,7 @@ from django.conf import settings
 class Book(models.Model):
     author = models.CharField(max_length = 200)
     title = models.CharField(max_length = 200)
+    desp = models.TextField(max_length = 2000, blank=True)
 
     def __str__(self):
         return self.title
