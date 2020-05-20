@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.conf import settings 
+from dateutil.relativedelta import relativedelta
 
 class Book(models.Model):
     author = models.CharField(max_length = 200)
@@ -25,5 +26,8 @@ class Checkout(models.Model):
     def borrowed(self):
         self.checked_out = True
         return self.checked_out
+    
+    def due(self):
+        self.due_date = self.checkout_date + relativedelta(weeks=2)
 
    
