@@ -26,24 +26,24 @@ def book_details (request,id):
 
 def checked_out (request,id):
     book = Book.objects.get(pk=id)
-    if request.method == 'POST':
-        check = Checkout(request.POST)
-        book = check.book = book
-        borrower = check.borrower = request.user
-        checkout_date = check.checkout_date = timezone.now()
-        due_date = check.due()
+    if request.POST.get('checked_out', False) == "on":
+        if request.method == 'POST':
+            
+            check = Checkout(request.POST)
+            book = check.book = book
+            borrower = check.borrower = request.user
+            checkout_date = check.checkout_date = timezone.now()
+            due_date = check.due()
+            checked_out = check.borrowed()
 
-        Checkout.objects.create(book=book, borrower=borrower, checkout_date=checkout_date, due_date=due_date)
+            Checkout.objects.create(book=book, borrower=borrower, checkout_date=checkout_date, due_date=due_date, checked_out=checked_out)
 
-        if request.POST.get('checked_out', False) == "on":
-            check.borrowed()
-
-        
         return redirect('list_books')
     return render(request,"lib_app/list_books.html")
 
 def my_books (request):
     books = Checkout.objects.filter(borrower=request.user)
+
     context = {
         'books':books,
     }
