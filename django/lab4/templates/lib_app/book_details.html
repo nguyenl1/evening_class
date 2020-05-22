@@ -8,7 +8,5 @@ by: {{ desp.author }} <br>
 
 <form action= "{% url 'checked_out' desp.id %}" method="POST">
     {% csrf_token %}
-    Checkout Book: <input type="checkbox" name="checked_out"/>
-    <input type="submit" value="Submit"/> 
 </form>
 {% endblock %}

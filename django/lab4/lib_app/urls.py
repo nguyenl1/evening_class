@@ -8,4 +8,5 @@ urlpatterns = [
     path('bookdetails/<int:id>', views.book_details, name="book_details"),
     path('checkout/<int:id>', views.checked_out, name="checked_out"),
     path('mybooks/', views.my_books, name="my_books"),
+    path('return/<int:id>', views.return_book, name="return_book"),
 ]

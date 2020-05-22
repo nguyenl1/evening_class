@@ -21,11 +21,19 @@ class Checkout(models.Model):
     borrower = models.ForeignKey(get_user_model(), on_delete= models.SET_NULL, null=True, blank=True)
     checkout_date = models.DateTimeField(default=timezone.now)
     due_date = models.DateTimeField(blank=True, null=True)
-    checked_out = models.BooleanField(default=False)
 
-    def borrowed(self):
-        self.checked_out = True
-        return self.checked_out
+    LOAN_STATUS = (
+        ('a', 'available'),
+        ('u', 'unavailable'),
+    )
+
+    status = models.CharField(
+        max_length = 1,
+        choices = LOAN_STATUS,
+        blank = True,
+        default = 'a',
+        help_text= 'book availability', 
+    )
     
     def due(self):
         self.due_date = self.checkout_date + relativedelta(weeks=2)
