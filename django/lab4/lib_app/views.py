@@ -11,6 +11,7 @@ def list_books(request):
 
     context = {
             'books':books,
+            
         }
 
     return render(request,"lib_app/list_books.html", context=context)
@@ -26,7 +27,7 @@ def book_details (request,id):
     return render(request, "lib_app/book_details.html", context=context)
 
 def checked_out (request,id):
-    book = Book.objects.get(pk=id)
+    book = Book.objects.get(id=id)
     if request.method == 'POST':
             
         check = Checkout(request.POST)
@@ -42,7 +43,7 @@ def checked_out (request,id):
     return render(request,"lib_app/list_books.html")
 
 def my_books (request):
-    books = Checkout.objects.filter(borrower=request.user, status='u')
+    books = Checkout.objects.filter(borrower=request.user)
     context = {
         'books':books,
     }
@@ -53,6 +54,8 @@ def my_books (request):
 def return_book(request,id):
     avail = Checkout.objects.get(pk=id)
     avail.status = 'a'
+    avail.borrower = None
+    avail.checkout_date = None 
     avail.save()
     # if request.POST.get('status') == 'u':
         

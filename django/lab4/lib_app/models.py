@@ -19,7 +19,7 @@ class Book(models.Model):
 class Checkout(models.Model):
     book = models.ForeignKey(Book, on_delete=models.SET_NULL, null = True)
     borrower = models.ForeignKey(get_user_model(), on_delete= models.SET_NULL, null=True, blank=True)
-    checkout_date = models.DateTimeField(default=timezone.now)
+    checkout_date = models.DateTimeField(blank=True, null=True)
     due_date = models.DateTimeField(blank=True, null=True)
 
     LOAN_STATUS = (

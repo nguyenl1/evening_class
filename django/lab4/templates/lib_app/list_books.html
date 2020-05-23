@@ -3,13 +3,13 @@
 
 <div class="POST">
 
-    <h2> My Library </h2>
+    <h2> Library List </h2>
 
     <hr>
     
     {% for book in books %}
         <ul>
-            <li><a href="{% url 'book_details' book.id %}">{{ book.title }}</a> by {{ book.author }}
+            <li><a href="{% url 'book_details' book.id %}">{{ book.title }}</a> by {{ book.author }}: 
             </li> 
         </ul>
     {% endfor %}
