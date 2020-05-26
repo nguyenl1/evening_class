@@ -17,7 +17,7 @@ class Book(models.Model):
 
 
 class Checkout(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.SET_NULL, null = True)
+    book_id = models.ForeignKey(Book, on_delete=models.SET_NULL, null = True)
     borrower = models.ForeignKey(get_user_model(), on_delete= models.SET_NULL, null=True, blank=True)
     checkout_date = models.DateTimeField(blank=True, null=True)
     due_date = models.DateTimeField(blank=True, null=True)
@@ -37,5 +37,6 @@ class Checkout(models.Model):
     
     def due(self):
         self.due_date = self.checkout_date + relativedelta(weeks=2)
+        return self.due_date
 
    
