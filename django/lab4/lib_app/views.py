@@ -31,25 +31,16 @@ def checked_out (request,id):
     if request.method == 'POST':
             
         check = Checkout(request.POST)
-        book = Book.objects.get(id=id)
+        book = Book.objects.get(pk=id)
         # book = check.book = book
         borrower = check.borrower = request.user
         checkout_date = check.checkout_date = timezone.now()
         due_date = check.due()
-        status = 'u'
+        status = book.status = 'u'
 
-        
+        Checkout.objects.create(book=book, borrower=borrower, checkout_date=checkout_date, due_date=due_date,)
+        book.save()
 
-        print(f'''
-        check: {check}
-        book: {book}
-        borrower: {borrower}
-        due_date: {due_date}
-        status: {status}
-        ''')
-
-        Checkout.objects.create(book_id=book, borrower=borrower, checkout_date=checkout_date, due_date=due_date, status=status)
-        
         return redirect('my_books')
     return render(request,"lib_app/list_books.html")
 
@@ -64,10 +55,12 @@ def my_books (request):
 
 def return_book(request,id):
     avail = Checkout.objects.get(pk=id)
-    avail.status = 'a'
+    book = Book.objects.get(pk=id)
+    book.status = 'a'
     avail.borrower = None
     avail.checkout_date = None 
     avail.save()
+    book.save()
     # if request.POST.get('status') == 'u':
         
 

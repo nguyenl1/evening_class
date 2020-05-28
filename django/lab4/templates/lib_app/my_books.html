@@ -9,7 +9,12 @@
     
     {% for book in books %}
         <ul>
-            <li><a href="{% url 'book_details' book.id %}">{{ book.book }}</a></li>
+            <li>{{ book.book }}
+                <form action= "{% url 'return_book' book.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Return Book" name="return_book"/> 
+                </form>
+            </li>
         </ul>
     {% endfor %}
     
