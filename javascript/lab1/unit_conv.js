@@ -34,9 +34,13 @@ let meters = {
 };
 let distance = parseFloat(readline.question('Enter the distance: '));
 
-let from_units = meters.get(readline.question('Enter your measurement in feet, miles, meters, kilo, yard, or inch. '));
+let userInput1 = readline.question('Enter your measurement in feet, miles, meters, kilo, yard, or inch. ');
 
-let userInput3 = meters.get(readline.question('Enter your measurement you would like to ocnvert to in feet, miles, meters, kilo, yard, or inch. '));
+let from_units = meters[userInput1]
+
+let userInput2= readline.question('Enter your measurement you would like to ocnvert to in feet, miles, meters, kilo, yard, or inch. ');
+
+let to_units = meters[userInput2]
 
 let measure = (distance * from_units) / to_units
 
