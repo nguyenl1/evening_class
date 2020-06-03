@@ -1,10 +1,18 @@
-document.getElementById("demo").innerHTML="Hello World!";
+const hello = document.getElementById("demo");
+hello.innerHTML="Hello World!"
 
-const task = document.getElementById('taskname');
+hello.addEventListener('click', function() {
+    alert('Hello World!');
+    // const task = document.getElementById('taskname').value;
 
-task.oninput = function() {
-    console.log('user entered some text: '+task.value);
-};
+    // console.log(task)
+});
 
+const task = document.getElementById('taskname').value;
+
+console.log(task)
 
 // var todo = document.getElementsByTagName("ul"); 
+
+let mytasks = [] 
+
