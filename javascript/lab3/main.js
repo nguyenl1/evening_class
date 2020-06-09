@@ -18,14 +18,20 @@ axios.get(url)
 
     for (i = 0; i < 11; i++) {
       const data = response.data.results[i];
-      const name =  data.name
-      const picture = data.picture
-      const location = data.location
-      const latitude = data.location.coordinates.latitude
-      const longitude = data.location.coordinates.longitude
+      const first =  data.name.first;
+      const last = data.name.last;
+      const picture = data.picture.thumbnail;
+      const city = data.location.city;
+      const country = data.location.country;
+      const state = data.location.state;
+      const latitude = data.location.coordinates.latitude;
+      const longitude = data.location.coordinates.longitude;
+      
       
       L.marker([latitude,longitude]).addTo(mymap)
-      .bindPopup('TEXT HERE')
+      .bindPopup(
+        `<center> <p> <b> ${first} ${last} </b> <br><br> <img src = "${picture}"/> <br><br> ${city}, ${state}, ${country}  </p></center>`
+      )
       .openPopup();
     }
 
